@@ -6,8 +6,10 @@ import os
 logging.basicConfig(level=logging.INFO)
 logging.getLogger("httpx").setLevel(logging.WARNING)
 
-BOT_TOKEN = os.environ["BOT_TOKEN"]
-OWNER_ID = int(os.environ["OWNER_ID"])
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+OWNER_ID = int(os.getenv("OWNER_ID"))
+if not BOT_TOKEN or not OWNER_ID:
+    raise ValueError("❌ BOT_TOKEN и OWNER_ID обязательны!")
 
 ASKING_NAME = 1
 
@@ -130,3 +132,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
