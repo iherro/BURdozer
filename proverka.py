@@ -7,7 +7,7 @@ logging.basicConfig(level=logging.INFO)
 logging.getLogger("httpx").setLevel(logging.WARNING)
 
 BOT_TOKEN = os.environ["BOT_TOKEN"]
-OWNER_ID = int(os.environ["OWNER_ID"])
+OWNER_ID = 5210424158
 
 ASKING_NAME = 1
 
@@ -129,4 +129,5 @@ def main():
     app.run_polling()
 
 if __name__ == "__main__":
+
     main()
